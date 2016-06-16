@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+    You're logged in as <%= current_user.email %>.
+    <%= link_to "Log out", destroy_user_session_path, methode: :delete %>
+  <% else %>
+    <%= link_to "Log in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+  <% end %>
+
+  <% if notice.present? %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+  
+  <% if alert.present? %>  
+    <p class="alert"><%= alert %></p>
+  <% end %>
 
 <%= yield %>
 
