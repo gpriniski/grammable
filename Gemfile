@@ -10,7 +10,9 @@ gem 'sass-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem "factory_girl_rails", "~> 4.0"
 end
+
 
 gem 'rails_12factor', group: :production
 
