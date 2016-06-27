@@ -5,7 +5,7 @@ RSpec.describe CommentsController, type: :controller do
     it "should allow users to create comments on grams" do
       p = FactoryGirl.create(:gram)
       u = FactoryGirl.create(:user)
-      sign_in user
+      sign_in u
 
       post :create, gram_id: p.id, comment: {message: 'awsome gram'}
 
